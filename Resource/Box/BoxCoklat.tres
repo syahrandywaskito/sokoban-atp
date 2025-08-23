@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BoxData" load_steps=3 format=3 uid="uid://cvevsa68c487h"]
+
+[ext_resource type="Script" uid="uid://dres4wy21qpgr" path="res://Scripts/Resource Scripts/BoxData.gd" id="1_vuf6i"]
+[ext_resource type="Texture2D" uid="uid://cjhmw8psq04kf" path="res://Assets/sokoban_tilesheet@2.png" id="2_cy88h"]
+
+[resource]
+script = ExtResource("1_vuf6i")
+box_id = "box_coklat"
+texture = ExtResource("2_cy88h")
+region = Rect2(768, 0, 128, 128)
+metadata/_custom_type_script = "uid://dres4wy21qpgr"

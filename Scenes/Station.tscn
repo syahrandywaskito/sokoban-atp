@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://crb035dhk64f0"]
+
+[ext_resource type="Texture2D" uid="uid://cjhmw8psq04kf" path="res://Assets/sokoban_tilesheet@2.png" id="1_5637c"]
+[ext_resource type="Script" uid="uid://calhl6edq3fyl" path="res://Scripts/Station.gd" id="1_n1phb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ts0w"]
+size = Vector2(64, 64)
+
+[node name="Station" type="Area2D" groups=["Stations"]]
+z_index = -1
+script = ExtResource("1_n1phb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2ts0w")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_5637c")
+region_enabled = true
+region_rect = Rect2(0, 384, 128, 128)

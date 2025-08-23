@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="StationData" load_steps=3 format=3 uid="uid://bov8v0j1j8lhh"]
+
+[ext_resource type="Script" uid="uid://bv4ijsyjbweif" path="res://Scripts/Resource Scripts/StationData.gd" id="1_ds8ck"]
+[ext_resource type="Texture2D" uid="uid://cjhmw8psq04kf" path="res://Assets/sokoban_tilesheet@2.png" id="2_4h0cs"]
+
+[resource]
+script = ExtResource("1_ds8ck")
+require_box = true
+box_type = "box_coklat"
+region = Rect2(128, 384, 128, 128)
+texture = ExtResource("2_4h0cs")
+metadata/_custom_type_script = "uid://bv4ijsyjbweif"
