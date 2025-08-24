@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HoleData" load_steps=3 format=3 uid="uid://cwkwpcbiowg50"]
+
+[ext_resource type="Script" uid="uid://djlux5vrtugiq" path="res://Scripts/Resource Scripts/HoleData.gd" id="1_2vub5"]
+[ext_resource type="Texture2D" uid="uid://cjhmw8psq04kf" path="res://Assets/sokoban_tilesheet@2.png" id="2_3lti4"]
+
+[resource]
+script = ExtResource("1_2vub5")
+texture = ExtResource("2_3lti4")
+region = Rect2(1408, 128, 128, 128)
+fill_region = Array[Rect2]([Rect2(768, 512, 128, 128), Rect2(896, 512, 128, 128), Rect2(1024, 512, 128, 128), Rect2(1152, 512, 128, 128), Rect2(1280, 512, 128, 128)])
+box_type = "box_coklat"
+requirement_box_type = true
+metadata/_custom_type_script = "uid://djlux5vrtugiq"

@@ -1,26 +1,25 @@
-[gd_scene load_steps=24 format=4 uid="uid://r1ovm20qbogb"]
+[gd_scene load_steps=23 format=4 uid="uid://bjjfxyx8yypvm"]
 
-[ext_resource type="Script" uid="uid://dxl3ha7nop4yf" path="res://Scripts/Camera.gd" id="1_bhm8u"]
-[ext_resource type="Script" uid="uid://ccs4fe6clegsl" path="res://Scripts/Level/Level.gd" id="1_v3vpo"]
-[ext_resource type="Texture2D" uid="uid://cjhmw8psq04kf" path="res://Assets/sokoban_tilesheet@2.png" id="2_5ms4e"]
-[ext_resource type="PackedScene" uid="uid://bpwc3rrtombpc" path="res://Scenes/Player.tscn" id="3_shgkq"]
-[ext_resource type="PackedScene" uid="uid://3wql2d4h374f" path="res://Scenes/box.tscn" id="4_ujyaq"]
-[ext_resource type="Resource" uid="uid://coothupk60ybl" path="res://Resource/Box/BoxMerah.tres" id="5_oy2kj"]
-[ext_resource type="Resource" uid="uid://cvevsa68c487h" path="res://Resource/Box/BoxCoklat.tres" id="6_sa0i8"]
-[ext_resource type="PackedScene" uid="uid://crb035dhk64f0" path="res://Scenes/Station.tscn" id="7_rdb2v"]
-[ext_resource type="Resource" uid="uid://bov8v0j1j8lhh" path="res://Resource/Station/BrownStation.tres" id="8_5q7gb"]
-[ext_resource type="Resource" uid="uid://dy3m0ra1yupsg" path="res://Resource/Station/RedStation.tres" id="8_43uqb"]
-[ext_resource type="Script" uid="uid://de8aeo6doda84" path="res://Scripts/Level/Grid Component/grid_draw.gd" id="10_h2ngc"]
-[ext_resource type="PackedScene" uid="uid://dmh3x32w5jyp7" path="res://Scenes/Hole.tscn" id="11_f6h8t"]
-[ext_resource type="Resource" uid="uid://cwkwpcbiowg50" path="res://Resource/Hole/BrownHole.tres" id="12_bmar4"]
-[ext_resource type="Texture2D" uid="uid://cfn1d0207s364" path="res://Assets/White/1x/forward.png" id="12_pfdk1"]
-[ext_resource type="Texture2D" uid="uid://d0u51fyg4axk1" path="res://Assets/White/1x/return.png" id="12_ucv7y"]
-[ext_resource type="Script" uid="uid://bvpo64786hs11" path="res://Scripts/UI/ResetControl.gd" id="12_wqb3e"]
-[ext_resource type="Script" uid="uid://di2y77qtc7hsy" path="res://Scripts/UI/WinUIControl.gd" id="14_gjqcy"]
-[ext_resource type="AudioStream" uid="uid://djypnfjaibs4s" path="res://Audio/Sokoban_BGM_self.wav" id="17_f6h8t"]
+[ext_resource type="Script" uid="uid://ccs4fe6clegsl" path="res://Scripts/Level/Level.gd" id="1_8qdnk"]
+[ext_resource type="Script" uid="uid://dxl3ha7nop4yf" path="res://Scripts/Camera.gd" id="2_sytno"]
+[ext_resource type="Texture2D" uid="uid://cjhmw8psq04kf" path="res://Assets/sokoban_tilesheet@2.png" id="3_as08y"]
+[ext_resource type="PackedScene" uid="uid://bpwc3rrtombpc" path="res://Scenes/Player.tscn" id="4_pk3hp"]
+[ext_resource type="PackedScene" uid="uid://3wql2d4h374f" path="res://Scenes/box.tscn" id="5_bose6"]
+[ext_resource type="Resource" uid="uid://cvevsa68c487h" path="res://Resource/Box/BoxCoklat.tres" id="6_53tmp"]
+[ext_resource type="Resource" uid="uid://coothupk60ybl" path="res://Resource/Box/BoxMerah.tres" id="7_n2eit"]
+[ext_resource type="PackedScene" uid="uid://crb035dhk64f0" path="res://Scenes/Station.tscn" id="8_cbr4v"]
+[ext_resource type="Resource" uid="uid://bov8v0j1j8lhh" path="res://Resource/Station/BrownStation.tres" id="9_atq0n"]
+[ext_resource type="Resource" uid="uid://dy3m0ra1yupsg" path="res://Resource/Station/RedStation.tres" id="10_wj3oa"]
+[ext_resource type="Script" uid="uid://de8aeo6doda84" path="res://Scripts/Level/Grid Component/grid_draw.gd" id="11_xawp5"]
+[ext_resource type="Script" uid="uid://bvpo64786hs11" path="res://Scripts/UI/ResetControl.gd" id="12_3p16x"]
+[ext_resource type="Texture2D" uid="uid://d0u51fyg4axk1" path="res://Assets/White/1x/return.png" id="13_vuhml"]
+[ext_resource type="Script" uid="uid://di2y77qtc7hsy" path="res://Scripts/UI/WinUIControl.gd" id="14_gje0y"]
+[ext_resource type="Texture2D" uid="uid://cfn1d0207s364" path="res://Assets/White/1x/forward.png" id="15_cvir8"]
+[ext_resource type="PackedScene" uid="uid://c7d1owpmt3u7g" path="res://Scenes/Levels/Level5.tscn" id="15_sytno"]
+[ext_resource type="AudioStream" uid="uid://djypnfjaibs4s" path="res://Audio/Sokoban_BGM_self.wav" id="16_5yf6v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ms4e"]
-texture = ExtResource("2_5ms4e")
+texture = ExtResource("3_as08y")
 texture_region_size = Vector2i(128, 128)
 1:0/0 = 0
 2:0/0 = 0
@@ -130,7 +129,7 @@ tile_size = Vector2i(128, 128)
 sources/1 = SubResource("TileSetAtlasSource_5ms4e")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_shgkq"]
-texture = ExtResource("2_5ms4e")
+texture = ExtResource("3_as08y")
 texture_region_size = Vector2i(128, 128)
 1:0/0 = 0
 2:0/0 = 0
@@ -253,13 +252,13 @@ shadow_size = 17
 shadow_color = Color(0, 0, 0, 0.592157)
 
 [node name="TestLevel" type="Node2D" node_paths=PackedStringArray("win_ui", "reset_ui", "canvas_modulate")]
-script = ExtResource("1_v3vpo")
+script = ExtResource("1_8qdnk")
 win_ui = NodePath("WinUI")
 reset_ui = NodePath("Reset")
 canvas_modulate = NodePath("DarkWindow")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("1_bhm8u")
+script = ExtResource("2_sytno")
 
 [node name="Land" type="TileMapLayer" parent="." groups=["FloorTileMap"]]
 z_index = -2
@@ -267,41 +266,51 @@ tile_map_data = PackedByteArray("AAAAAAAAAQALAAYAAAAAAAEAAQALAAYAAAAAAAIAAQALAAY
 tile_set = SubResource("TileSet_shgkq")
 
 [node name="Wall" type="TileMapLayer" parent="." groups=["WallTileMap"]]
-tile_map_data = PackedByteArray("AAABAAEAAAAHAAcAAAABAAIAAAAHAAcAAAABAAMAAAAHAAcAAAABAAQAAAAHAAcAAAABAAUAAAAHAAcAAAABAAYAAAAHAAcAAAABAAcAAAAHAAcAAAABAAgAAAAHAAcAAAABAAkAAAAHAAcAAAABAAoAAAAHAAcAAAABAAsAAAAHAAcAAAABAAwAAAAHAAcAAAABAA0AAAAHAAcAAAACAA0AAAAHAAcAAAADAA0AAAAHAAcAAAAEAA0AAAAHAAcAAAAFAA0AAAAHAAcAAAAGAA0AAAAHAAcAAAAHAA0AAAAHAAcAAAAIAA0AAAAHAAcAAAAJAA0AAAAHAAcAAAAKAA0AAAAHAAcAAAALAA0AAAAHAAcAAAAMAA0AAAAHAAcAAAANAA0AAAAHAAcAAAANAAwAAAAHAAcAAAANAAsAAAAHAAcAAAANAAoAAAAHAAcAAAANAAkAAAAHAAcAAAANAAgAAAAHAAcAAAANAAcAAAAHAAcAAAANAAYAAAAHAAcAAAANAAUAAAAHAAcAAAANAAQAAAAHAAcAAAANAAMAAAAHAAcAAAANAAEAAAAHAAcAAAANAAIAAAAHAAcAAAAMAAEAAAAHAAcAAAALAAEAAAAHAAcAAAAKAAEAAAAHAAcAAAAJAAEAAAAHAAcAAAAIAAEAAAAHAAcAAAAHAAEAAAAHAAcAAAAGAAEAAAAHAAcAAAAFAAEAAAAHAAcAAAAEAAEAAAAHAAcAAAADAAEAAAAHAAcAAAACAAEAAAAHAAcAAAA=")
+tile_map_data = PackedByteArray("AAABAAEAAAAHAAcAAAABAAIAAAAHAAcAAAABAAMAAAAHAAcAAAABAAQAAAAHAAcAAAABAAUAAAAHAAcAAAABAAYAAAAHAAcAAAABAAcAAAAHAAcAAAABAAgAAAAHAAcAAAABAAkAAAAHAAcAAAABAAoAAAAHAAcAAAABAAsAAAAHAAcAAAABAAwAAAAHAAcAAAABAA0AAAAHAAcAAAACAA0AAAAHAAcAAAADAA0AAAAHAAcAAAAEAA0AAAAHAAcAAAAFAA0AAAAHAAcAAAAGAA0AAAAHAAcAAAAHAA0AAAAHAAcAAAAIAA0AAAAHAAcAAAAJAA0AAAAHAAcAAAAKAA0AAAAHAAcAAAALAA0AAAAHAAcAAAAMAA0AAAAHAAcAAAANAA0AAAAHAAcAAAANAAwAAAAHAAcAAAANAAsAAAAHAAcAAAANAAoAAAAHAAcAAAANAAkAAAAHAAcAAAANAAgAAAAHAAcAAAANAAcAAAAHAAcAAAANAAUAAAAHAAcAAAANAAQAAAAHAAcAAAANAAMAAAAHAAcAAAANAAEAAAAHAAcAAAANAAIAAAAHAAcAAAAMAAEAAAAHAAcAAAALAAEAAAAHAAcAAAAKAAEAAAAHAAcAAAAJAAEAAAAHAAcAAAAIAAEAAAAHAAcAAAAHAAEAAAAHAAcAAAAGAAEAAAAHAAcAAAAFAAEAAAAHAAcAAAAEAAEAAAAHAAcAAAADAAEAAAAHAAcAAAACAAEAAAAHAAcAAAANAAYAAAAHAAcAAAAHAAUAAAAHAAcAAAAHAAYAAAAHAAcAAAAHAAcAAAAHAAcAAAAHAAgAAAAHAAcAAAAHAAkAAAAHAAcAAAAIAAcAAAAHAAcAAAAJAAcAAAAHAAcAAAAGAAcAAAAHAAcAAAAFAAcAAAAHAAcAAAA=")
 tile_set = SubResource("TileSet_ujyaq")
 
-[node name="Player" parent="." instance=ExtResource("3_shgkq")]
-position = Vector2(582, 566)
+[node name="Player" parent="." instance=ExtResource("4_pk3hp")]
+position = Vector2(448, 824)
 
 [node name="Boxes" type="Node2D" parent="."]
 
-[node name="Box" parent="Boxes" instance=ExtResource("4_ujyaq")]
-position = Vector2(1089, 466)
-box_data = ExtResource("5_oy2kj")
+[node name="Box" parent="Boxes" instance=ExtResource("5_bose6")]
+position = Vector2(1208, 1192)
+box_data = ExtResource("6_53tmp")
 
-[node name="Box2" parent="Boxes" instance=ExtResource("4_ujyaq")]
-position = Vector2(560, 954)
-box_data = ExtResource("6_sa0i8")
+[node name="Box2" parent="Boxes" instance=ExtResource("5_bose6")]
+position = Vector2(696, 704)
+box_data = ExtResource("6_53tmp")
+
+[node name="Box3" parent="Boxes" instance=ExtResource("5_bose6")]
+position = Vector2(696, 1192)
+box_data = ExtResource("7_n2eit")
+
+[node name="Box4" parent="Boxes" instance=ExtResource("5_bose6")]
+position = Vector2(1208, 704)
+box_data = ExtResource("7_n2eit")
 
 [node name="Station" type="Node2D" parent="."]
 
-[node name="Station" parent="Station" instance=ExtResource("7_rdb2v")]
-position = Vector2(557, 1486)
-station_data = ExtResource("8_5q7gb")
+[node name="Station" parent="Station" instance=ExtResource("8_cbr4v")]
+position = Vector2(320, 1600)
+station_data = ExtResource("9_atq0n")
 
-[node name="Station2" parent="Station" instance=ExtResource("7_rdb2v")]
-position = Vector2(1098, 820)
-station_data = ExtResource("8_43uqb")
+[node name="Station2" parent="Station" instance=ExtResource("8_cbr4v")]
+position = Vector2(1600, 320)
+station_data = ExtResource("9_atq0n")
 
-[node name="Holes" type="Node2D" parent="."]
+[node name="Station3" parent="Station" instance=ExtResource("8_cbr4v")]
+position = Vector2(1600, 1600)
+station_data = ExtResource("10_wj3oa")
 
-[node name="Hole" parent="Holes" instance=ExtResource("11_f6h8t")]
-position = Vector2(704, 704)
-hole_data = ExtResource("12_bmar4")
+[node name="Station4" parent="Station" instance=ExtResource("8_cbr4v")]
+position = Vector2(320, 320)
+station_data = ExtResource("10_wj3oa")
 
 [node name="GridDraw" type="Node2D" parent="."]
 z_index = -1
-script = ExtResource("10_h2ngc")
+script = ExtResource("11_xawp5")
 metadata/_custom_type_script = "uid://de8aeo6doda84"
 
 [node name="DarkWindow" type="CanvasModulate" parent="."]
@@ -318,7 +327,7 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
-script = ExtResource("12_wqb3e")
+script = ExtResource("12_3p16x")
 level = NodePath("../..")
 reset_button = NodePath("Reset")
 
@@ -330,7 +339,7 @@ anchor_right = 1.0
 offset_left = -150.0
 offset_bottom = 150.0
 grow_horizontal = 0
-texture_normal = ExtResource("12_ucv7y")
+texture_normal = ExtResource("13_vuhml")
 stretch_mode = 0
 
 [node name="WinUI" type="CanvasLayer" parent="."]
@@ -350,7 +359,8 @@ offset_right = 48.0
 offset_bottom = 272.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("14_gjqcy")
+script = ExtResource("14_gje0y")
+next_scene = ExtResource("15_sytno")
 level = NodePath("../..")
 next_level_button = NodePath("Next")
 retry_level_button = NodePath("Retry")
@@ -368,7 +378,7 @@ offset_right = -92.0
 offset_bottom = 124.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("12_ucv7y")
+texture_normal = ExtResource("13_vuhml")
 stretch_mode = 0
 
 [node name="Next" type="TextureButton" parent="WinUI/Button"]
@@ -384,7 +394,7 @@ offset_right = 220.0
 offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("12_pfdk1")
+texture_normal = ExtResource("15_cvir8")
 stretch_mode = 0
 
 [node name="Text" type="Control" parent="WinUI"]
@@ -417,6 +427,6 @@ text = "LEVEL COMPLETE"
 label_settings = SubResource("LabelSettings_ucv7y")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("17_f6h8t")
+stream = ExtResource("16_5yf6v")
 volume_db = -0.5
 autoplay = true

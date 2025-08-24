@@ -60,31 +60,56 @@ func _process(delta: float) -> void:
 			anim.stop()
 	
 func check_and_move(direction: Vector2) -> void:
-	## grid sebelahnya sesuai dengan direction movement
 	var next_grid_pos = player_grid_pos + direction
-
-	## dua grid setelahnya sesuai dengan direction movement
 	var next_to_next_grid_pos = next_grid_pos + direction
 
-	var wall_tile_data : TileData = wall_tilemap.get_cell_tile_data(Vector2i(next_grid_pos))
-
-	if wall_tile_data != null and wall_tile_data.get_custom_data("wall"):
-		return
-	
 	var boxes := get_tree().get_nodes_in_group("Boxes")
 	var next_box_node: Node2D = get_box_at_grid(next_grid_pos, boxes)
 
+	var holes := get_tree().get_nodes_in_group("Holes")
+	var next_hole_node: Node2D = get_hole_at_grid(next_grid_pos, holes)
+
+	# 1. Periksa apakah ada dinding di depan
+	var wall_tile_data : TileData = wall_tilemap.get_cell_tile_data(Vector2i(next_grid_pos))
+	if wall_tile_data != null and wall_tile_data.get_custom_data("wall"):
+		return
+
+	# 2. Jika ada kotak di depan pemain
 	if next_box_node != null:
 		var next_to_next_box_node: Node2D = get_box_at_grid(next_to_next_grid_pos, boxes)
-		var next_to_next_tile_data: TileData = wall_tilemap.get_cell_tile_data(Vector2i(next_to_next_grid_pos))
+		var next_to_next_hole_node: Hole = get_hole_at_grid(next_to_next_grid_pos, holes)
+		var next_to_next_wall_data: TileData = wall_tilemap.get_cell_tile_data(Vector2i(next_to_next_grid_pos))
 
-		if next_to_next_box_node == null and (next_to_next_tile_data == null or !next_to_next_tile_data.get_custom_data("wall")):
-			var next_box_target_pos = floor_tilemap.map_to_local(next_to_next_grid_pos)
-			next_box_node.set_target_position(next_box_target_pos)
-
-			move_player_to(next_grid_pos)
+		# Jika tempat di depan kotak kosong atau sudah terisi lubang
+		if next_to_next_box_node == null and (next_to_next_wall_data == null or !next_to_next_wall_data.get_custom_data("wall")):
+			# Cek apakah ada lubang di depan kotak
+			if next_to_next_hole_node != null:
+				if !next_to_next_hole_node.filled:
+					# Dorong kotak ke lubang kosong
+					next_box_node.set_target_position(floor_tilemap.map_to_local(next_to_next_grid_pos))
+					# next_to_next_hole_node.fill_hole(next_box_node)
+					move_player_to(next_grid_pos)
+				else:
+					# Lubang sudah terisi, maka kotak bisa lewat
+					var next_box_target_pos = floor_tilemap.map_to_local(next_to_next_grid_pos)
+					next_box_node.set_target_position(next_box_target_pos)
+					move_player_to(next_grid_pos)
+			else:
+				# Dorong kotak ke tempat kosong
+				var next_box_target_pos = floor_tilemap.map_to_local(next_to_next_grid_pos)
+				next_box_node.set_target_position(next_box_target_pos)
+				move_player_to(next_grid_pos)
 		else:
 			return
+	# 3. Jika ada lubang di depan pemain (tanpa kotak)
+	elif next_hole_node != null:
+		# Jika lubang belum terisi, pemain tidak bisa bergerak
+		if !next_hole_node.filled:
+			return
+		else:
+			# Jika lubang sudah terisi, pemain bisa melewatinya
+			move_player_to(next_grid_pos)
+	# 4. Jika tidak ada apa-apa, pemain bisa bergerak
 	else:
 		move_player_to(next_grid_pos)
 
@@ -92,21 +117,24 @@ func change_anim(direction: Vector2) -> void:
 	match direction:
 		Vector2(0,-1):
 			anim.play("walk_up")
-			# print("gerak ke atas")
 		Vector2(0,1):
 			anim.play("walk_down")
-			# print("gerak ke bawah")
 		Vector2(1,0):
 			anim.play("walk_right")
-			# print("gerak ke kanan")
 		Vector2(-1,0):
 			anim.play("walk_left")
-			# print("gerak ke kiri")
 
 func move_player_to(new_grid_pos: Vector2) -> void:
 	player_grid_pos = new_grid_pos
 	target_position = floor_tilemap.map_to_local(player_grid_pos)
 	moving = true
+
+func get_hole_at_grid(grid_pos: Vector2i, holes: Array) -> Node2D:
+	for hole in holes:
+		var hole_grid_pos = floor_tilemap.local_to_map(hole.position)
+		if hole_grid_pos == grid_pos:
+			return hole
+	return null
 
 func get_box_at_grid(grid_pos: Vector2i, boxes: Array):
 	for box in boxes:
